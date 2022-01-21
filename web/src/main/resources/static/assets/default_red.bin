@@ -1,21 +1,18 @@
-# <span class="title block-accent header">Hello.</span>  
-## <span class="title"><%=info.name%></span>   
+# <span class="title block-accent header">Hello.</span>
+## <span class="title"><%=info.name%></span>
 
 <table>
 	<tr>
-	<td class="title-1-120">Inf: </td><td class="content"><%=info.gender%> / <%=info.age%> / <%=info.work_age%>年工作经验</td>
+	<td class="title-1-120">Inf: </td><td class="content"><%=info.gender%> / <%=info.age%> / <%=info.age_work%>年工作经验</td>
 	<tr>
-	<td class="title-1-120">Tel: </td><td class="content"><%=info.tel%></td>  
+	<td class="title-1-120">Tel: </td><td class="content"><%=info.tel%></td>
 	</tr>  
 	<tr>
-	<td class="title-1-120">E-mail: </td><td class="content"><%=info.email%></td>    
+	<td class="title-1-120">E-mail: </td><td class="content"><%=info.email%></td>
 	</tr>
 	<tr>
-	<td class="title-1-120">GitHub: </td><td class="content"><%=info.github%></td>   
-	</tr> 
-	<tr>
-	<td class="title-1-120">Homepage: </td><td class="content"><%=info.homepage%></td>  
-	</tr> 
+	<td class="title-1-120">GitHub: </td><td class="content"><%=info.github%></td>
+	</tr>
 </table>
  
 
@@ -48,13 +45,13 @@
 
 
 ## <span class="block-accent">04.</span><span class="title"><u>项目经历</u></span>
-<table>
+<table class="content-box" >
 	<%for(var i = 0; i < experience.length; i++) {%>
 	<tr class="content-outside">
 		<td class="title-1-160" valign="top"><%:=experience[i].from%> - <%:=experience[i].to%></td>
 		<td class="title-1"><%:=experience[i].project%> / <span class="content"><%:=experience[i].position%></span>
 			<div class="content-inside">
-				<span class="title-1"><%:=experience[i].intro%> / </span><span class="content"><%:=experience[i].work%></span><br><span class="content"><%:=experience[i].detail%></span>
+				<span class="title-1"><%:=experience[i].intro%> / </span><span class="content"><%:=experience[i].work%></span><br><div style="height: 8px;" ></div><span class="content"><%:=experience[i].detail%></span>
 			</div>
 		</td>
 	</tr>

@@ -1,134 +1,134 @@
 <!DOCTYPE HTML>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0" />
-		<title>Alimin`s Homepage</title>
-		<script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
-		<script type="text/javascript" src="./js/showdown.min.js"></script>
-		<script type="text/javascript" src="./js/template.js"></script>
-		<script type="text/javascript" src="./js/base64.min.js"></script>
-		<style type="text/css">
-		body {
-			text-align: center;
-		}
-		.content-root {
-			padding-left: 32px;
-			padding-right: 32px;
-			padding-top: 32px;
-			text-align: left;
-			margin:0 auto;
-			width: 800px;
-			background-image: url(../static/images/ban_996.png);
-			background-repeat: no-repeat;
-			background-position-y: top;
-			background-position-x: center;
-		}
-		.title {
-			font-family: '思源宋体 Heavy',serif;
-			mso-ascii-font-family: 'Adobe Hebrew';
-			mso-hansi-font-family:'Adobe Hebrew';
-		}
-		.title-1 {
-			font-family: '思源宋体 Medium',serif;
-			mso-ascii-font-family: 'Adobe Hebrew';
-			mso-hansi-font-family:'Adobe Hebrew';
-		}
-		.title-1-120 {
-			min-width:120;
-			font-family: '思源宋体 Medium',serif;
-			mso-ascii-font-family: 'Adobe Hebrew';
-			mso-hansi-font-family:'Adobe Hebrew';
-		}
-		.title-1-160 {
-			min-width:160;
-			font-family: '思源宋体 Medium',serif;
-			mso-ascii-font-family: 'Adobe Hebrew';
-			mso-hansi-font-family:'Adobe Hebrew';
-		}
-		.content {
-			color: #666666;
-			font-family: '思源宋体 Medium',serif;
-			mso-ascii-font-family: 'Adobe Hebrew';
-			mso-hansi-font-family:'Adobe Hebrew';
-		}
-		.block-accent {
-			padding-top: 16;
-			padding-bottom: 4;
-			padding-left: 6;
-			padding-right: 6;
-			margin-right: 8;
-			background-color: #c82623;
-			color: #ffffff;
-		}
-		.content-inside {
-			padding-top: : 4;
-			
-		}
-		.content-outside {
-			padding-top: : 6;
-			margin-bottom: 8;
-		}
-		.header {
-			padding-top: 64px;
-		}
-		</style>
-	</head>
-	<body >
-		<div id="content" class="content-root"></div>
-		<script type="text/javascript" >
-			function getQueryString(name) {
-				var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
-				var r = window.location.search.substr(1).match(reg);
-				if (r != null) {
-					return unescape(r[2]);
-				}
-				return null;
-			}
-			function show(templateStr, json) {
-				var converter = new showdown.Converter();
-				var html = converter.makeHtml(template(templateStr, json));
-				$('#content').html(html);
-			}
-			function loadPublicTemplate(templateStr, json) {
-				$.get("./assets/private/extra_alimin.md", function(text, status) {
-					show(templateStr + "\n" + text, json);
-				});
-			}
-			function loadPrivateTemplate(templateStr, json) {
-				$.get("./assets/default_red_honor.bin", function(text, status) {
-					show(templateStr + "\n" + text, json);
-				});
-			}
-			function loadTemplate(templateUrl, json) {
-				$.get(templateUrl, function( templateStr, status) {
-					var privacy = getQueryString("privacy");
-					if (privacy == "private") {
-						var infoStr = getQueryString("info");
-						if (null != infoStr) {
-							try {
-								var info = JSON.parse(Base64.decode(infoStr));
-								json.info = info;
-							} catch(err) {
-								// Ignore.
-							}
-						}
-						// loadPrivateTemplate(templateStr, json);
-						show(templateStr, json);
-					} else {
-						loadPublicTemplate(templateStr, json);
-					}
-				});
-			}
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0"/>
+    <title>Alimin`s Homepage</title>
+    <script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="./js/showdown.min.js"></script>
+    <script type="text/javascript" src="./js/template.js"></script>
+    <script type="text/javascript" src="./js/base64.min.js"></script>
+	<link href="./css/font_questrial.css" rel="stylesheet">
+    <style type="text/css">
+        body {
+			font-family: 'Questrial', sans-serif;
+            text-align: center;
+        }
 
-			var dataUrl = "./bin/alimin_public.json";
-			var privacy = getQueryString("privacy");
-			if ("private" == privacy) {
-				dataUrl = "./bin/alimin_private.json";
-			}
-			$.get(dataUrl, function(json, status) {
-				loadTemplate("./assets/default_red.bin", json);
-			}, "json");
-		</script>
-	</body>
+        .content-root {
+            padding-left: 32px;
+            padding-right: 32px;
+            padding-top: 32px;
+            text-align: left;
+            margin: 0 auto;
+            width: 800px;
+            background-image: url(../static/images/ban_996.png);
+            background-repeat: no-repeat;
+            background-position-y: top;
+            background-position-x: center;
+        }
+
+        .title {
+            /*font-family: '思源宋体 Heavy', serif;*/
+            /*mso-ascii-font-family: 'Adobe Hebrew';*/
+            /*mso-hansi-font-family: 'Adobe Hebrew';*/
+        }
+
+        .title-1 {
+            /*font-family: '思源宋体 Medium', serif;*/
+            /*mso-ascii-font-family: 'Adobe Hebrew';*/
+            /*mso-hansi-font-family: 'Adobe Hebrew';*/
+        }
+
+        .title-1-120 {
+            min-width: 120px;
+            /*font-family: '思源宋体 Medium', serif;*/
+            /*mso-ascii-font-family: 'Adobe Hebrew';*/
+            /*mso-hansi-font-family: 'Adobe Hebrew';*/
+        }
+
+        .title-1-160 {
+            min-width: 160px;
+            /*font-family: '思源宋体 Medium', serif;*/
+            /*mso-ascii-font-family: 'Adobe Hebrew';*/
+            /*mso-hansi-font-family: 'Adobe Hebrew';*/
+        }
+
+        .content {
+            color: #666666;
+            font-family: 'Questrial','思源宋体 Medium', serif;
+            /*mso-ascii-font-family: 'Adobe Hebrew';*/
+            /*mso-hansi-font-family: 'Adobe Hebrew';*/
+		}
+
+        .block-accent {
+            padding-top: 16px;
+            padding-bottom: 4px;
+            padding-left: 6px;
+            padding-right: 6px;
+            margin-right: 8px;
+            background-color: #c82623;
+            color: #ffffff;
+        }
+
+        .content-inside {
+            padding-top: 4px;
+
+        }
+
+		.content-box {
+			border-collapse: collapse;
+			border: none;
+		}
+
+        .content-outside {
+			border-collapse: collapse;
+			border: none;
+			border-bottom: solid transparent 16px;
+			border-top: solid transparent 0px;
+        }
+
+        .header {
+            padding-top: 64px;
+        }
+
+		.font_en {
+			font-family: 'Questrial', sans-serif;
+		}
+
+		.font_cn_title {
+			font-family: 'Questrial', sans-serif;
+		}
+    </style>
+</head>
+<body>
+<div id="content" class="content-root"></div>
+<script type="text/javascript">
+    function getQueryString(name) {
+        var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) {
+            return unescape(r[2]);
+        }
+        return null;
+    }
+
+    function show(templateStr, json) {
+        var converter = new showdown.Converter();
+        var html = converter.makeHtml(template(templateStr, json));
+        $('#content').html(html);
+    }
+
+    function loadTemplate(templateUrl, json) {
+        $.get(templateUrl, function (templateStr, status) {
+            show(templateStr, json);
+        });
+    }
+
+    var dataUrl = "./bin/alimin_private.json";
+    $.get(dataUrl, function (json, status) {
+        loadTemplate("./assets/default_red.bin", json);
+    }, "json");
+</script>
+</body>
 </html>
