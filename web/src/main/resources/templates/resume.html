@@ -1,0 +1,114 @@
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0" />
+		<title>Alimin`s Homepage</title>
+		<script type="text/javascript" src="./jquery-3.6.0.min.js"></script>
+		<script type="text/javascript" src="./showdown.min.js"></script>
+		<script type="text/javascript" src="./template.js"></script>
+		<script type="text/javascript" src="./base64.min.js"></script>
+		<style type="text/css">
+		body {
+			text-align: center;
+		}
+		.content-root {
+			padding-left: 32px;
+			padding-right: 32px;
+			padding-top: 32px;
+			text-align: left;
+			margin:0 auto;
+			width: 800px;
+			background-image: url(./images/ban_996.png);
+			background-repeat: no-repeat;
+			background-position-y: top;
+			background-position-x: center;
+		}
+		.title {
+			font-family: '思源宋体 Heavy',serif;
+			mso-ascii-font-family: 'Adobe Hebrew';
+			mso-hansi-font-family:'Adobe Hebrew';
+		}
+		.title-1 {
+			font-family: '思源宋体 Medium',serif;
+			mso-ascii-font-family: 'Adobe Hebrew';
+			mso-hansi-font-family:'Adobe Hebrew';
+		}
+		.title-1-120 {
+			min-width:120;
+			font-family: '思源宋体 Medium',serif;
+			mso-ascii-font-family: 'Adobe Hebrew';
+			mso-hansi-font-family:'Adobe Hebrew';
+		}
+		.title-1-160 {
+			min-width:160;
+			font-family: '思源宋体 Medium',serif;
+			mso-ascii-font-family: 'Adobe Hebrew';
+			mso-hansi-font-family:'Adobe Hebrew';
+		}
+		.content {
+			color: #666666;
+			font-family: '思源宋体 Medium',serif;
+			mso-ascii-font-family: 'Adobe Hebrew';
+			mso-hansi-font-family:'Adobe Hebrew';
+		}
+		.block-accent {
+			padding-top: 16;
+			padding-bottom: 4;
+			padding-left: 6;
+			padding-right: 6;
+			margin-right: 8;
+			background-color: #c82623;
+			color: #ffffff;
+		}
+		.content-inside {
+			padding-top: : 4;
+			
+		}
+		.content-outside {
+			padding-top: : 6;
+			margin-bottom: 8;
+		}
+		.header {
+			padding-top: 64px;
+		}
+		</style>
+	</head>
+	<body >
+		<div id="content" class="content-root"></div>
+		<script type="text/javascript" >
+			function getQueryString(name) {
+				var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+				var r = window.location.search.substr(1).match(reg);
+				if (r != null) {
+					return unescape(r[2]);
+				}
+				return null;
+			}
+			function showErr() {
+				$('#content').html("Input your resume as json & encode by base64. example: imalimin.github.io/resume?resume=eyJpbmZvIjp7Im5hbWUiOiAiQWxpbWluIn19");
+			}
+			function show(templateStr, json) {
+				var converter = new showdown.Converter();
+				var html = converter.makeHtml(template(templateStr, json));
+				$('#content').html(html);
+			}
+			function loadTemplate(templateUrl, json) {
+				$.get(templateUrl, function( templateStr, status) {
+					show(templateStr, json);
+				});
+			}
+
+			var resumeStr = getQueryString("resume");
+			if (null != resumeStr) {
+				try {
+					var resume = JSON.parse(Base64.decode(resumeStr));
+					loadTemplate("./assets/default_red.bin", resume);
+				} catch(err) {
+					showErr();
+				}
+			} else {
+				showErr();
+			}
+		</script>
+	</body>
+</html>
