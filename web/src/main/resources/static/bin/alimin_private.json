@@ -1,0 +1,110 @@
+{
+	"info": {
+		"name": "李明艺",
+		"gender": "男",
+		"age": "31",
+		"ageWork": "5.5",
+		"phone": "18124967462",
+		"email": "aliminabc@gmail.com",
+		"github": "https://github.com/imalimin",
+		"homepage": "https://alimin.org"
+	},
+	"school": [{
+		"name": "中南民族大学",
+		"begin": "2012.09",
+		"end": "2016.06",
+		"major": "软件工程",
+		"grade": "本科"
+	}],
+	"works": [{
+			"begin": "2018.12",
+			"end": "NOW",
+			"company": "字节跳动",
+			"position": "多媒体客户端研发工程师"
+		},
+		{
+			"begin": "2018.03",
+			"end": "2018.11",
+			"company": "广州世讯信息科技有限公司",
+			"position": "音视频研发工程师"
+		}, {
+			"begin": "2017.05",
+			"end": "2018.01",
+			"company": "广州市飞屋网络科技有限公司",
+			"position": "Android开发工程师"
+		}, {
+			"begin": "2015.09",
+			"end": "2017.04",
+			"company": "广州市拿火信息科技有限公司",
+			"position": "Android开发工程师"
+		}
+	],
+	"skills": [{
+		"type": "团队能力",
+		"info": "有项目管理经验，能够负责关键技术攻关，指导新人工作。有较好的技术判断力，能够做出合适的技术选型和方案设计。能够主导团队技术评审，参与技术标准制定"
+	}, {
+		"type": "音视频",
+		"info": "熟悉FFmpeg/MediaCodec/OpenSL ES等常见音视频库的使用，对性能优化、基础架构设计有一定经验"
+	}, {
+		"type": "OpenGL ES",
+		"info": "熟悉渲染流程，熟悉Program/Shader、FBO/PBO/VBO的使用，理解MVP的实现原理，对性能优化有一定经验"
+	}, {
+		"type": "C/C++",
+		"info": "4年经验，熟悉语法，熟悉STL的基础应用，理解多态，有复杂系统的编码经验"
+	}, {
+		"type": "Android",
+		"info": "5年Android开发经验，熟悉NDK，熟悉Cmake进行交叉编译的实现流程"
+	}],
+	"experience": [{
+		"begin": "2018.12",
+		"end": "NOW",
+		"project": "多媒体拍摄编辑SDK",
+		"position": "多媒体客户端研发工程师",
+		"intro": "面向字节内外的多媒体中台SDK，包括抖音、剪映、西瓜、火山等，能够经受全球数亿DAU考验",
+		"detail": "&bull;参与团队建设，候选人筛选，作为Mentor进行新人培养<br>&bull;负责重构后的拍摄引擎落地抖音项目，制定落地规划细则，协调RD/QA多方人力参与建设，组织每日站会保障项目进度与质量，最终保证项目顺利上线抖音<br>&bull;负责新拍摄引擎多轨建设，提出音视频多轨解耦的技术方案并实现落地，最终支持合拍/抢镜/视频背景等多种业务场景 <br>&bull;负责HDR/4K/60FPS/多路流/变焦/防抖等高阶能力建设项目，制定落地规划细则， 明确团队分工，通过技术调研、厂商合作等多种方式保障项目落地<br>&bull;参与SDK需求迭代，负责K歌/合拍/抢镜/视频背景/回声消除等多个需求的开发落地<br>&bull;参与SDK性能优化与质量建设，处理线上花屏/绿屏/闪屏/卡顿/音画不同步/Crash等质量问题",
+		"work": ""
+	}, {
+		"begin": "2018.03",
+		"end": "2018.11",
+		"project": "Nonolive",
+		"position": "音视频研发工程师",
+		"intro": "海外移动直播APP，目前在海外市场拥有较高的占有率",
+		"detail": "&bull;运用OpenGL ES进行视频渲染和滤镜处理（如比心特效、脸萌特效、水印处理），运用 FFmpeg 、MediaCodec 进行音视频软硬件编码，运用 RTMP 进行音视频推流，并针对海外网络进行优化",
+		"work": "负责Android直播SDK的开发"
+	}, {
+		"begin": "2018.02",
+		"end": "NOW",
+		"project": "FilmKilns",
+		"position": "多媒体客户端研发工程师",
+		"intro": "FilmKilns是个人开源于Github的Android高性能音视频编码库，使用C/C++实现，包括图片编辑、视频多轨道编辑、音视频录制三大功能",
+		"detail": "&bull;项目使用OpenGL ES实现图像的高性能渲染，利用FFmpeg、MediaCodec 以及 X264 实现视频的软硬件编码。并引入图层支持，实现多轨道的混合",
+		"work": ""
+	}, {
+		"begin": "2015.11",
+		"end": "2017.04",
+		"project": "拿火学院",
+		"position": "Android开发工程师",
+		"intro": "一个线上预定线下教学的音乐教育平台，致力于整合线下高质量教学内容，以优惠的价格提供给学生",
+		"detail": "&bull;运用 FFmpeg/MediaCodec 实现定制化短视频录制和视频美化算法、自定义高性能View",
+		"work": "独立负责 Android 学生端和教师端开发工作"
+	}],
+	"honors": [{
+		"time": "2014.09",
+		"name": "中国大学生服务外包创新创业大赛A组国家级二等奖"
+	}, {
+		"time": "2015.05",
+		"name": "发表论文《基于Android平台的短视频社交应用设计与实现》"
+	}, {
+		"time": "2014.06",
+		"name": "第五届蓝桥杯大赛团队赛国家级二等奖"
+	}, {
+		"time": "2015.04",
+		"name": "第六届蓝桥杯大赛个人赛省级二等奖"
+	}, {
+		"time": "2015.09",
+		"name": "中南民族大学专业奖学金"
+	}, {
+		"time": "2015.05",
+		"name": "中南民族大学大学生创新创业标兵"
+	}]
+}

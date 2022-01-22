@@ -22,11 +22,13 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.jsoup:jsoup:1.14.2")
-    implementation("com.fasterxml.jackson.core:jackson-core:2.4.3")
-    implementation("com.fasterxml.jackson.core:jackson-databind:2.9.5")
-    implementation("org.codehaus.jackson:jackson-mapper-asl:1.9.13")
-    implementation("com.fasterxml.jackson.core:jackson-core:2.8.6")
+    implementation("com.fasterxml.jackson.core:jackson-core:2.9.+")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.9.+")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.9.10")
     implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
+    implementation("mysql:mysql-connector-java:5.1.13")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("javax.el:javax.el-api:3.0.0")
 
     providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
     testImplementation("org.springframework.boot:spring-boot-starter-test") {

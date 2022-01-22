@@ -1,0 +1,57 @@
+{
+	"info": {
+		"name": "Alimin",
+		"gender": "男",
+		"age": "30",
+		"age_work": "5",
+		"tel": "181 **** 7462",
+		"email": "aliminabc@gmail.com",
+		"github": "https://github.com/imalimin",
+		"homepage": "https://alimin.org"
+	},
+	"school": [{
+		"name": "中南民族大学",
+		"from": "2012.09",
+		"to": "2016.06",
+		"major": "软件工程",
+		"grade": "本科"
+	}],
+	"works": [{
+			"from": "2018.12",
+			"to": "NOW",
+			"company": "字节跳动",
+			"position": "多媒体客户端研发工程师"
+		},
+		{
+			"from": "2018.03",
+			"to": "2018.11",
+			"company": "广州世讯信息科技有限公司",
+			"position": "音视频研发工程师"
+		}, {
+			"from": "2017.05",
+			"to": "2018.01",
+			"company": "广州市飞屋网络科技有限公司",
+			"position": "Android开发工程师"
+		}, {
+			"from": "2015.09",
+			"to": "2017.04",
+			"company": "广州市拿火信息科技有限公司",
+			"position": "Android开发工程师"
+		}
+	],
+	"skills": [{
+		"type": "音视频",
+		"info": "熟悉FFmpeg/MediaCodec/OpenSL ES等常见音视频库的使用，对性能优化、基础架构设计有一定经验"
+	}, {
+		"type": "OpenGL ES",
+		"info": "熟悉渲染流程，熟悉Shader/FBO/PBO/VBO的使用，理解MVP的实现原理，对性能优化有一定经验"
+	}, {
+		"type": "C/C++",
+		"info": "3年经验，熟悉语法，熟悉STL的基础应用，理解多态"
+	}, {
+		"type": "Android",
+		"info": "5年Android开发经验，熟悉NDK，熟悉Cmake进行交叉编译的实现流程"
+	}],
+	"experience": [],
+	"honors": []
+}

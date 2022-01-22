@@ -13,7 +13,7 @@
 libs/
 
 # Generated files
-bin/
+#bin/
 gen/
 classes/
 
