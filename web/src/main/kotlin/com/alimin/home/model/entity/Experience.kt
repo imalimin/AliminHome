@@ -27,4 +27,6 @@ data class Experience(
         @ManyToOne(cascade = [CascadeType.REFRESH])
         @JoinColumn(name = "user_id")
         var user: User? = null
-)
+) {
+    constructor() : this("", "", "", "", "", "", "")
+}

@@ -1,6 +1,6 @@
 package com.alimin.home
 
-import com.alimin.home.model.entity.*
+import com.alimin.home.model.entity.vo.UserResume
 import com.alimin.home.model.services.*
 import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
@@ -14,15 +14,6 @@ import java.io.InputStreamReader
 
 @SpringBootTest
 class AliminHomeApplicationTests {
-    data class UserWrapper constructor(
-            var info: User,
-            var school: Array<School>,
-            var works: Array<WorkInfo>,
-            var skills: Array<Skill>,
-            var experience: Array<Experience>,
-            var honors: Array<Honor>
-    )
-
     @Autowired
     private lateinit var userService: UserService
     @Autowired
@@ -46,11 +37,11 @@ class AliminHomeApplicationTests {
             val reader = BufferedReader(InputStreamReader(FileInputStream(file), "UTF-8"))
             val str = reader.readText()
             val mapper = jacksonObjectMapper().apply { configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false) }
-            val userWrapper = mapper.readValue(str, UserWrapper::class.java)
+            val userWrapper = mapper.readValue(str, UserResume::class.java)
             println(userWrapper)
 
-            if (!userService.existsByName(userWrapper.info.name)) {
-                val user = userWrapper.info
+            if (!userService.existsByName(userWrapper.user.name)) {
+                val user = userWrapper.user
                 userService.put(user)
                 userWrapper.school.forEach {
                     it.user = user

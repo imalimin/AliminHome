@@ -1,0 +1,68 @@
+# <span class="title block-accent header">Hello.</span>
+## <span class="title"><%=user.name%></span>
+
+<table>
+	<tr>
+	<td class="title-1-120">Inf: </td><td class="content"><%=user.gender%> / <%=user.age%> / <%=user.ageWork%>年工作经验</td>
+	<tr>
+	<td class="title-1-120">Tel: </td><td class="content"><%=user.phone%></td>
+	</tr>  
+	<tr>
+	<td class="title-1-120">E-mail: </td><td class="content"><%=user.email%></td>
+	</tr>
+	<tr>
+	<td class="title-1-120">GitHub: </td><td class="content"><%=user.email%></td>
+	</tr>
+</table>
+ 
+
+## <span class="block-accent">01.</span><span class="title"><u>教育经历</u></span>
+<table>
+	<%for(var i = 0; i < school.length; i++) {%>
+	<tr>
+		<td class="title-1-160"><%:=school[i].begin%> – <%:=school[i].end%></td><td class="title-1"><%:=school[i].name%> / <span class="content"><%:=school[i].major%> <%:=school[i].grade%></span></td>
+	</tr>
+    <%}%>
+</table>
+
+## <span class="block-accent">02.</span><span class="title"><u>工作经历</u></span>
+<table>
+	<%for(var i = 0; i < works.length; i++) {%>
+	<tr>
+		<td class="title-1-160"><%:=works[i].begin%> - <%:=works[i].end%></td><td class="title-1"><%:=works[i].company%> / <span class="content"><%:=works[i].position%></span></td>
+	</tr>
+    <%}%>
+</table>
+
+## <span class="block-accent">03.</span><span class="title"><u>个人技能</u></span>
+<table>
+	<%for(var i = 0; i < skills.length; i++) {%>
+	<tr>
+		<td class="title-1-120" valign="top"><%:=skills[i].type%></td><td class="title-1"><%:=skills[i].info%></td>
+	</tr>
+    <%}%>
+</table>
+
+
+## <span class="block-accent">04.</span><span class="title"><u>项目经历</u></span>
+<table class="content-box" >
+	<%for(var i = 0; i < experience.length; i++) {%>
+	<tr class="content-outside">
+		<td class="title-1-160" valign="top"><%:=experience[i].begin%> - <%:=experience[i].end%></td>
+		<td class="title-1"><%:=experience[i].project%> / <span class="content"><%:=experience[i].position%></span>
+			<div class="content-inside">
+				<span class="title-1"><%:=experience[i].intro%> / </span><span class="content"><%:=experience[i].work%></span><br><div style="height: 8px;" ></div><span class="content"><%:=experience[i].detail%></span>
+			</div>
+		</td>
+	</tr>
+    <%}%>
+</table>
+
+## <span class="block-accent">05.</span><span class="title"><u>获奖情况</u></span>
+<table>
+	<%for(var i = 0; i < honors.length; i++) {%>
+	<tr>
+		<td class="title-1-120" valign="top"><%:=honors[i].time%></td><td class="title-1"><%:=honors[i].name%></td>
+	</tr>
+    <%}%>
+</table>

@@ -10,7 +10,7 @@ import javax.persistence.*
 @Entity
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonSerialize(include = JsonSerialize.Inclusion.NON_EMPTY)
-data class User constructor(
+data class User(
         var name: String,
         var age: Int,
         var ageWork: Float,
@@ -22,5 +22,6 @@ data class User constructor(
         var id: Long = 0,
         @CreationTimestamp
         var cTime: Timestamp? = null
-
-)
+) {
+    constructor() : this("", 0, 0.0f, "")
+}

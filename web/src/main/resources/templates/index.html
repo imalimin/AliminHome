@@ -114,20 +114,25 @@
     }
 
     function show(templateStr, json) {
+        console.log(templateStr)
+        console.log(json)
         var converter = new showdown.Converter();
         var html = converter.makeHtml(template(templateStr, json));
         $('#content').html(html);
     }
 
     function loadTemplate(templateUrl, json) {
-        $.get(templateUrl, function (templateStr, status) {
-            show(templateStr, json);
+        $.get(templateUrl, function (templateJson, status) {
+            if (templateJson.status == 200) {
+                show(Base64.decode(templateJson.data), json);
+            }
         });
     }
-
-    var dataUrl = "./bin/alimin_private.json";
-    $.get(dataUrl, function (json, status) {
-        loadTemplate("./assets/default_red.bin", json);
+    var uid = getQueryString("uid");
+    $.get("./get_my_resume?uid=" + uid, function (json, status) {
+        if (json.status == 200) {
+            loadTemplate("./template?tid=0", json.data);
+        }
     }, "json");
 </script>
 </body>
