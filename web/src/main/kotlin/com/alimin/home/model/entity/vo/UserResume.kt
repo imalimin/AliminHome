@@ -8,5 +8,6 @@ data class UserResume constructor(
         var works: Array<WorkInfo>,
         var skills: Array<Skill>,
         var experience: Array<Experience>,
-        var honors: Array<Honor>
+        var honors: Array<Honor>,
+        var pages: Array<PageInfo>
 )

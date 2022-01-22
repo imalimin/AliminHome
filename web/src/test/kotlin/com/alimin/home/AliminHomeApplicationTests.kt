@@ -26,9 +26,8 @@ class AliminHomeApplicationTests {
     private lateinit var experienceService: ExperienceService
     @Autowired
     private lateinit var honorService: HonorService
-
-    fun contextLoads() {
-    }
+    @Autowired
+    private lateinit var pageInfoService: PageInfoService
 
     @Test
     fun initUser() {
@@ -62,6 +61,10 @@ class AliminHomeApplicationTests {
                 userWrapper.honors.forEach {
                     it.user = user
                     honorService.repo.save(it)
+                }
+                userWrapper.pages.forEach {
+                    it.user = user
+                    pageInfoService.repo.save(it)
                 }
             }
         }

@@ -29,6 +29,8 @@ class IndexControllerImpl : IndexController {
     private lateinit var experienceService: ExperienceService
     @Autowired
     private lateinit var honorService: HonorService
+    @Autowired
+    private lateinit var pageInfoService: PageInfoService
 
     override fun index(model: Model): ModelAndView {
         return ModelAndView("index")
@@ -53,7 +55,8 @@ class IndexControllerImpl : IndexController {
                     workInfoService.repo.findByUser(user),
                     skillService.repo.findByUser(user),
                     experienceService.repo.findByUser(user),
-                    honorService.repo.findByUser(user))
+                    honorService.repo.findByUser(user),
+                    pageInfoService.repo.findByUser(user))
             userWrapper.school.forEach { it.user = null }
             userWrapper.works.forEach { it.user = null }
             userWrapper.skills.forEach { it.user = null }

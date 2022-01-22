@@ -1,13 +1,11 @@
 {
-	"info": {
+	"user": {
 		"name": "李明艺",
 		"gender": "男",
 		"age": "31",
 		"ageWork": "5.5",
 		"phone": "18124967462",
-		"email": "aliminabc@gmail.com",
-		"github": "https://github.com/imalimin",
-		"homepage": "https://alimin.org"
+		"email": "aliminabc@gmail.com"
 	},
 	"school": [{
 		"name": "中南民族大学",
@@ -106,5 +104,12 @@
 	}, {
 		"time": "2015.05",
 		"name": "中南民族大学大学生创新创业标兵"
-	}]
+	}],
+	"pages": [
+		{
+			"name": "github",
+			"url": "https://github.com/imalimin",
+			"homepage": "https://alimin.org"
+		}
+	]
 }

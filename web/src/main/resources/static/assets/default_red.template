@@ -6,13 +6,12 @@
 	<td class="title-1-120">Inf: </td><td class="content"><%=user.gender%> / <%=user.age%> / <%=user.ageWork%>年工作经验</td>
 	<tr>
 	<td class="title-1-120">Tel: </td><td class="content"><%=user.phone%></td>
-	</tr>  
-	<tr>
-	<td class="title-1-120">E-mail: </td><td class="content"><%=user.email%></td>
 	</tr>
-	<tr>
-	<td class="title-1-120">GitHub: </td><td class="content"><%=user.email%></td>
-	</tr>
+	<%for(var i = 0; i < pages.length; i++) {%>
+        <tr>
+            <td class="title-1-120"><%:=pages[i].name%>: </td><td class="content"><%:=pages[i].url%></td>
+        </tr>
+	<%}%>
 </table>
  
 
