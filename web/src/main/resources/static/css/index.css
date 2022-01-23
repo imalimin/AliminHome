@@ -1,0 +1,89 @@
+body {
+    font-family: 'Questrial', sans-serif;
+    text-align: center;
+}
+
+.content-root {
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 32px;
+    text-align: left;
+    margin: 0 auto;
+    width: 800px;
+    background-image: url(../static/images/ban_996.png);
+    background-repeat: no-repeat;
+    background-position-y: top;
+    background-position-x: center;
+}
+
+.title {
+    /*font-family: '思源宋体 Heavy', serif;*/
+    /*mso-ascii-font-family: 'Adobe Hebrew';*/
+    /*mso-hansi-font-family: 'Adobe Hebrew';*/
+}
+
+.title-1 {
+    /*font-family: '思源宋体 Medium', serif;*/
+    /*mso-ascii-font-family: 'Adobe Hebrew';*/
+    /*mso-hansi-font-family: 'Adobe Hebrew';*/
+}
+
+.title-1-120 {
+    min-width: 120px;
+    /*font-family: '思源宋体 Medium', serif;*/
+    /*mso-ascii-font-family: 'Adobe Hebrew';*/
+    /*mso-hansi-font-family: 'Adobe Hebrew';*/
+}
+
+.title-1-160 {
+    min-width: 160px;
+    /*font-family: '思源宋体 Medium', serif;*/
+    /*mso-ascii-font-family: 'Adobe Hebrew';*/
+    /*mso-hansi-font-family: 'Adobe Hebrew';*/
+}
+
+.content {
+    color: #666666;
+    font-family: 'Questrial', '思源宋体 Medium', serif;
+    /*mso-ascii-font-family: 'Adobe Hebrew';*/
+    /*mso-hansi-font-family: 'Adobe Hebrew';*/
+}
+
+.block-accent {
+    padding-top: 16px;
+    padding-bottom: 4px;
+    padding-left: 6px;
+    padding-right: 6px;
+    margin-right: 8px;
+    background-color: #c82623;
+    color: #ffffff;
+}
+
+.content-inside {
+    padding-top: 4px;
+
+}
+
+.content-box {
+    border-collapse: collapse;
+    border: none;
+}
+
+.content-outside {
+    border-collapse: collapse;
+    border: none;
+    border-bottom: solid transparent 16px;
+    border-top: solid transparent 0px;
+}
+
+.header {
+    padding-top: 64px;
+}
+
+.font_en {
+    font-family: 'Questrial', sans-serif;
+}
+
+.font_cn_title {
+    font-family: 'Questrial', sans-serif;
+}

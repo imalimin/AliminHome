@@ -9,102 +9,12 @@
     <script type="text/javascript" src="./js/template.js"></script>
     <script type="text/javascript" src="./js/base64.min.js"></script>
     <link href="./css/font_questrial.css" rel="stylesheet">
-    <style type="text/css">
-        body {
-            font-family: 'Questrial', sans-serif;
-            text-align: center;
-        }
-
-        .content-root {
-            padding-left: 32px;
-            padding-right: 32px;
-            padding-top: 32px;
-            text-align: left;
-            margin: 0 auto;
-            width: 800px;
-            background-image: url(../static/images/ban_996.png);
-            background-repeat: no-repeat;
-            background-position-y: top;
-            background-position-x: center;
-        }
-
-        .title {
-            /*font-family: '思源宋体 Heavy', serif;*/
-            /*mso-ascii-font-family: 'Adobe Hebrew';*/
-            /*mso-hansi-font-family: 'Adobe Hebrew';*/
-        }
-
-        .title-1 {
-            /*font-family: '思源宋体 Medium', serif;*/
-            /*mso-ascii-font-family: 'Adobe Hebrew';*/
-            /*mso-hansi-font-family: 'Adobe Hebrew';*/
-        }
-
-        .title-1-120 {
-            min-width: 120px;
-            /*font-family: '思源宋体 Medium', serif;*/
-            /*mso-ascii-font-family: 'Adobe Hebrew';*/
-            /*mso-hansi-font-family: 'Adobe Hebrew';*/
-        }
-
-        .title-1-160 {
-            min-width: 160px;
-            /*font-family: '思源宋体 Medium', serif;*/
-            /*mso-ascii-font-family: 'Adobe Hebrew';*/
-            /*mso-hansi-font-family: 'Adobe Hebrew';*/
-        }
-
-        .content {
-            color: #666666;
-            font-family: 'Questrial', '思源宋体 Medium', serif;
-            /*mso-ascii-font-family: 'Adobe Hebrew';*/
-            /*mso-hansi-font-family: 'Adobe Hebrew';*/
-        }
-
-        .block-accent {
-            padding-top: 16px;
-            padding-bottom: 4px;
-            padding-left: 6px;
-            padding-right: 6px;
-            margin-right: 8px;
-            background-color: #c82623;
-            color: #ffffff;
-        }
-
-        .content-inside {
-            padding-top: 4px;
-
-        }
-
-        .content-box {
-            border-collapse: collapse;
-            border: none;
-        }
-
-        .content-outside {
-            border-collapse: collapse;
-            border: none;
-            border-bottom: solid transparent 16px;
-            border-top: solid transparent 0px;
-        }
-
-        .header {
-            padding-top: 64px;
-        }
-
-        .font_en {
-            font-family: 'Questrial', sans-serif;
-        }
-
-        .font_cn_title {
-            font-family: 'Questrial', sans-serif;
-        }
-    </style>
+    <link type="text/css" href="./css/index.css" rel="stylesheet">
 </head>
 <body>
 <div id="content" class="content-root">
-    <span class="title block-accent header">Hello.</span>
-    <span class="title" th:text="${user.name}"></span>
+    <h1><span class="title block-accent header">Hello.</span></h1>
+    <h2><span class="title" th:text="${user.name}"></span></h2>
 
     <table>
         <tr>
@@ -120,8 +30,7 @@
         </tr>
     </table>
 
-
-    <span class="block-accent">01.</span><span class="title"><u>教育经历</u></span>
+    <h2><span class="block-accent">01.</span><span class="title"><u>教育经历</u></span></h2>
     <table>
         <tr th:each="school : ${schools}">
             <td class="title-1-160" th:text="${school.begin} + ' - ' + ${school.end}"></td>
@@ -132,7 +41,7 @@
         </tr>
     </table>
 
-    <span class="block-accent">02.</span><span class="title"><u>工作经历</u></span>
+    <h2><span class="block-accent">02.</span><span class="title"><u>工作经历</u></span></h2>
     <table>
         <tr th:each="work : ${works}">
             <td class="title-1-160" th:text="${work.begin} + ' - ' + ${work.end}"></td>
@@ -143,7 +52,7 @@
         </tr>
     </table>
 
-    <span class="block-accent">03.</span><span class="title"><u>个人技能</u></span>
+    <h2><span class="block-accent">03.</span><span class="title"><u>个人技能</u></span></h2>
     <table>
         <tr th:each="skill : ${skills}">
             <td class="title-1-120" valign="top" th:text="${skill.type}"></td>
@@ -151,8 +60,7 @@
         </tr>
     </table>
 
-
-    <span class="block-accent">04.</span><span class="title"><u>项目经历</u></span>
+    <h2><span class="block-accent">04.</span><span class="title"><u>项目经历</u></span></h2>
     <table class="content-box">
         <tr class="content-outside" th:each="exp : ${experiences}">
             <td class="title-1-160" valign="top" th:text="${exp.begin} + ' - ' + ${exp.end}"></td>
@@ -170,7 +78,7 @@
         </tr>
     </table>
 
-    <span class="block-accent">05.</span><span class="title"><u>获奖情况</u></span>
+    <h2><span class="block-accent">05.</span><span class="title"><u>获奖情况</u></span></h2>
     <table>
         <tr th:each="honor : ${honors}">
             <td class="title-1-120" valign="top" th:text="${honor.time}"></td>
