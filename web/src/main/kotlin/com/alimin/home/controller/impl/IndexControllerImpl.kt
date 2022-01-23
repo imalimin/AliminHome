@@ -33,6 +33,26 @@ class IndexControllerImpl : IndexController {
     private lateinit var pageInfoService: PageInfoService
 
     override fun index(model: Model): ModelAndView {
+        val userOptional = userService.repo.findById(1)
+        if (userOptional.isPresent) {
+            val user = userOptional.get()
+            val userWrapper = UserResume(user,
+                    schoolService.repo.findByUser(user),
+                    workInfoService.repo.findByUser(user),
+                    skillService.repo.findByUser(user),
+                    experienceService.repo.findByUser(user),
+                    honorService.repo.findByUser(user),
+                    pageInfoService.repo.findByUser(user))
+            println(userWrapper.school.contentToString())
+            model.addAttribute("user", user)
+            model.addAttribute("schools", userWrapper.school)
+            model.addAttribute("works", userWrapper.works)
+            model.addAttribute("skills", userWrapper.skills)
+            model.addAttribute("experiences", userWrapper.experience)
+            model.addAttribute("honors", userWrapper.honors)
+            model.addAttribute("pages", userWrapper.pages)
+            return ModelAndView("index", "model", model)
+        }
         return ModelAndView("index")
     }
 

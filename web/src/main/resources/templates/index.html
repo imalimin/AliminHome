@@ -1,5 +1,5 @@
-<!DOCTYPE HTML>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0"/>
@@ -8,10 +8,10 @@
     <script type="text/javascript" src="./js/showdown.min.js"></script>
     <script type="text/javascript" src="./js/template.js"></script>
     <script type="text/javascript" src="./js/base64.min.js"></script>
-	<link href="./css/font_questrial.css" rel="stylesheet">
+    <link href="./css/font_questrial.css" rel="stylesheet">
     <style type="text/css">
         body {
-			font-family: 'Questrial', sans-serif;
+            font-family: 'Questrial', sans-serif;
             text-align: center;
         }
 
@@ -56,10 +56,10 @@
 
         .content {
             color: #666666;
-            font-family: 'Questrial','思源宋体 Medium', serif;
+            font-family: 'Questrial', '思源宋体 Medium', serif;
             /*mso-ascii-font-family: 'Adobe Hebrew';*/
             /*mso-hansi-font-family: 'Adobe Hebrew';*/
-		}
+        }
 
         .block-accent {
             padding-top: 16px;
@@ -76,64 +76,107 @@
 
         }
 
-		.content-box {
-			border-collapse: collapse;
-			border: none;
-		}
+        .content-box {
+            border-collapse: collapse;
+            border: none;
+        }
 
         .content-outside {
-			border-collapse: collapse;
-			border: none;
-			border-bottom: solid transparent 16px;
-			border-top: solid transparent 0px;
+            border-collapse: collapse;
+            border: none;
+            border-bottom: solid transparent 16px;
+            border-top: solid transparent 0px;
         }
 
         .header {
             padding-top: 64px;
         }
 
-		.font_en {
-			font-family: 'Questrial', sans-serif;
-		}
+        .font_en {
+            font-family: 'Questrial', sans-serif;
+        }
 
-		.font_cn_title {
-			font-family: 'Questrial', sans-serif;
-		}
+        .font_cn_title {
+            font-family: 'Questrial', sans-serif;
+        }
     </style>
 </head>
 <body>
-<div id="content" class="content-root"></div>
-<script type="text/javascript">
-    function getQueryString(name) {
-        var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
-        var r = window.location.search.substr(1).match(reg);
-        if (r != null) {
-            return unescape(r[2]);
-        }
-        return null;
-    }
+<div id="content" class="content-root">
+    <span class="title block-accent header">Hello.</span>
+    <span class="title" th:text="${user.name}"></span>
 
-    function show(templateStr, json) {
-        console.log(templateStr)
-        console.log(json)
-        var converter = new showdown.Converter();
-        var html = converter.makeHtml(template(templateStr, json));
-        $('#content').html(html);
-    }
+    <table>
+        <tr>
+            <td class="title-1-120">Inf:</td>
+            <td class="content" th:text="${user.gender} + ' / ' + ${user.age} + ' / ' + ${user.ageWork} + '年工作经验'"></td>
+        <tr>
+            <td class="title-1-120">Tel:</td>
+            <td class="content" th:text="${user.phone}"></td>
+        </tr>
+        <tr th:each="page : ${pages}" >
+            <td class="title-1-120" th:text="${page.name} + ':'"></td>
+            <td class="content" th:text="${page.url}"></td>
+        </tr>
+    </table>
 
-    function loadTemplate(templateUrl, json) {
-        $.get(templateUrl, function (templateJson, status) {
-            if (templateJson.status == 200) {
-                show(Base64.decode(templateJson.data), json);
-            }
-        });
-    }
-    var uid = getQueryString("uid");
-    $.get("./get_my_resume?uid=" + uid, function (json, status) {
-        if (json.status == 200) {
-            loadTemplate("./template?tid=0", json.data);
-        }
-    }, "json");
-</script>
+
+    <span class="block-accent">01.</span><span class="title"><u>教育经历</u></span>
+    <table>
+        <tr th:each="school : ${schools}">
+            <td class="title-1-160" th:text="${school.begin} + ' - ' + ${school.end}"></td>
+            <td >
+                <span class="title-1" th:text="${school.name} + ' / '"></span>
+                <span class="content" th:text="${school.major} + ' ' + ${school.grade}"></span>
+            </td>
+        </tr>
+    </table>
+
+    <span class="block-accent">02.</span><span class="title"><u>工作经历</u></span>
+    <table>
+        <tr th:each="work : ${works}">
+            <td class="title-1-160" th:text="${work.begin} + ' - ' + ${work.end}"></td>
+            <td >
+                <span class="title-1" th:text="${work.company} + ' / '"></span>
+                <span class="content" th:text="${work.position}"></span>
+            </td>
+        </tr>
+    </table>
+
+    <span class="block-accent">03.</span><span class="title"><u>个人技能</u></span>
+    <table>
+        <tr th:each="skill : ${skills}">
+            <td class="title-1-120" valign="top" th:text="${skill.type}"></td>
+            <td class="title-1" th:text="${skill.info}"></td>
+        </tr>
+    </table>
+
+
+    <span class="block-accent">04.</span><span class="title"><u>项目经历</u></span>
+    <table class="content-box">
+        <tr class="content-outside" th:each="exp : ${experiences}">
+            <td class="title-1-160" valign="top" th:text="${exp.begin} + ' - ' + ${exp.end}"></td>
+            <td >
+                <span class="title-1" th:text="${exp.project} + ' / '"></span>
+                <span class="content" th:text="${exp.position}"></span>
+                <div class="content-inside">
+                    <span class="title-1" th:text="${exp.intro} + ' / '"></span>
+                    <span class="content" th:text="${exp.work}"></span>
+                    <br>
+                    <div style="height: 8px;"></div>
+                    <span class="content" th:text="${exp.detail}"></span>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <span class="block-accent">05.</span><span class="title"><u>获奖情况</u></span>
+    <table>
+        <tr th:each="honor : ${honors}">
+            <td class="title-1-120" valign="top" th:text="${honor.time}"></td>
+            <td class="title-1" th:text="${honor.name}"></td>
+        </tr>
+    </table>
+</div>
 </body>
 </html>
