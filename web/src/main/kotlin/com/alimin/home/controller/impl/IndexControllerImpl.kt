@@ -2,6 +2,7 @@ package com.alimin.home.controller.impl
 
 import com.alimin.home.State
 import com.alimin.home.controller.IndexController
+import com.alimin.home.model.entity.vo.ExperienceResumeVo
 import com.alimin.home.model.entity.vo.UserResume
 import com.alimin.home.model.services.*
 import org.springframework.beans.factory.annotation.Autowired
@@ -32,8 +33,8 @@ class IndexControllerImpl : IndexController {
     @Autowired
     private lateinit var pageInfoService: PageInfoService
 
-    override fun index(model: Model): ModelAndView {
-        val userOptional = userService.repo.findById(1)
+    override fun index(model: Model, uid: Long): ModelAndView {
+        val userOptional = userService.repo.findById(uid)
         if (userOptional.isPresent) {
             val user = userOptional.get()
             val userWrapper = UserResume(user,
@@ -43,17 +44,21 @@ class IndexControllerImpl : IndexController {
                     experienceService.repo.findByUser(user),
                     honorService.repo.findByUser(user),
                     pageInfoService.repo.findByUser(user))
-            println(userWrapper.school.contentToString())
+            val experiences = ArrayList<ExperienceResumeVo>()
+            userWrapper.experience.forEach {
+                experiences.add(ExperienceResumeVo(it.begin, it.end, it.project, it.position, it.intro, it.detail.split("\\n").toTypedArray(), it.work))
+            }
+
             model.addAttribute("user", user)
             model.addAttribute("schools", userWrapper.school)
             model.addAttribute("works", userWrapper.works)
             model.addAttribute("skills", userWrapper.skills)
-            model.addAttribute("experiences", userWrapper.experience)
+            model.addAttribute("experiences", experiences)
             model.addAttribute("honors", userWrapper.honors)
             model.addAttribute("pages", userWrapper.pages)
             return ModelAndView("index", "model", model)
         }
-        return ModelAndView("index")
+        return ModelAndView("error")
     }
 
     override fun getTemplate(request: HttpServletRequest, tid: String): State<*> {

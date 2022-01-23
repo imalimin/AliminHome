@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest
 @RequestMapping("/")
 interface IndexController {
     @RequestMapping(value = ["/", "index"])
-    fun index(model: Model): ModelAndView
+    fun index(model: Model, uid: Long): ModelAndView
 
     @ResponseBody
     @RequestMapping(value = ["/template"], method = [RequestMethod.GET])

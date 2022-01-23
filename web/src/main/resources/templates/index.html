@@ -4,10 +4,10 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0"/>
     <title>Alimin`s Homepage</title>
-    <script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript" src="./js/showdown.min.js"></script>
-    <script type="text/javascript" src="./js/template.js"></script>
-    <script type="text/javascript" src="./js/base64.min.js"></script>
+<!--    <script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>-->
+<!--    <script type="text/javascript" src="./js/showdown.min.js"></script>-->
+<!--    <script type="text/javascript" src="./js/template.js"></script>-->
+<!--    <script type="text/javascript" src="./js/base64.min.js"></script>-->
     <link href="./css/font_questrial.css" rel="stylesheet">
     <link type="text/css" href="./css/index.css" rel="stylesheet">
 </head>
@@ -72,7 +72,10 @@
                     <span class="content" th:text="${exp.work}"></span>
                     <br>
                     <div style="height: 8px;"></div>
-                    <span class="content" th:text="${exp.detail}"></span>
+                    <div th:each="detail : ${exp.details}">
+                        <span class="content" th:text="${detail}"></span>
+                        <br>
+                    </div>
                 </div>
             </td>
         </tr>
