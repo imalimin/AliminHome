@@ -12,12 +12,4 @@ import javax.servlet.http.HttpServletRequest
 interface IndexController {
     @RequestMapping(value = ["/", "index"])
     fun index(model: Model, uid: Long): ModelAndView
-
-    @ResponseBody
-    @RequestMapping(value = ["/template"], method = [RequestMethod.GET])
-    fun getTemplate(request: HttpServletRequest, tid: String): State<*>
-
-    @ResponseBody
-    @RequestMapping(value = ["/get_my_resume"], method = [RequestMethod.GET])
-    fun getMyResume(request: HttpServletRequest, uid: Long): State<*>
 }

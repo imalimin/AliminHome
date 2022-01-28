@@ -1,5 +1,6 @@
 package com.alimin.home
 
+import com.alimin.home.model.entity.OpenProjectInfo
 import com.alimin.home.model.entity.vo.UserResume
 import com.alimin.home.model.services.*
 import com.fasterxml.jackson.databind.DeserializationFeature
@@ -28,6 +29,8 @@ class AliminHomeApplicationTests {
     private lateinit var honorService: HonorService
     @Autowired
     private lateinit var pageInfoService: PageInfoService
+    @Autowired
+    private lateinit var openProjectInfoService: OpenProjectInfoService
 
     @Test
     fun initUser() {
@@ -70,4 +73,16 @@ class AliminHomeApplicationTests {
         }
     }
 
+    @Test
+    fun initOpenProjects() {
+        val userOptional = userService.repo.findById(1)
+        if (userOptional.isPresent) {
+            val project0 = OpenProjectInfo("HardwareVideoCodec", "Android音视频编解码SDK", "github", "使用OpenGL ES实现图像的高性能渲染，利用FFmpeg、MediaCodec以及X264实现视频的软硬件编解码，引入图层支持，实现多轨道的混合", "")
+            project0.user = userOptional.get()
+            openProjectInfoService.repo.save(project0)
+            val project1 = OpenProjectInfo("FilmKilns", "跨平台高性能音视频编解码SDK", "github", "拥有图片编辑、音视频录制、视频多轨道编辑三大核心功能，HardwareVideoCodec的跨平台实现，使用C/C++实现，并引入合理的软件架构，方便跨平台移植", "")
+            project1.user = userOptional.get()
+            openProjectInfoService.repo.save(project1)
+        }
+    }
 }

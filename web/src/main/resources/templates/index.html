@@ -63,7 +63,7 @@
     <h2><span class="block-accent">04.</span><span class="title"><u>项目经历</u></span></h2>
     <table class="content-box">
         <tr class="content-outside" th:each="exp : ${experiences}">
-            <td class="title-1-160" valign="top" th:text="${exp.begin} + ' - ' + ${exp.end}"></td>
+            <td class="title-1-140" valign="top" th:text="${exp.begin} + ' - ' + ${exp.end}"></td>
             <td >
                 <span class="title-1" th:text="${exp.project} + ' / '"></span>
                 <span class="content" th:text="${exp.position}"></span>
@@ -81,7 +81,26 @@
         </tr>
     </table>
 
-    <h2><span class="block-accent">05.</span><span class="title"><u>获奖情况</u></span></h2>
+    <h2><span class="block-accent">05.</span><span class="title"><u>开源项目</u></span></h2>
+    <table class="content-box">
+        <tr class="content-outside" th:each="project : ${projects}">
+            <td class="title-1-180" valign="top">
+                <div th:text="${project.name}"/>
+                <div>
+                    <img th:src="'https://img.shields.io/github/stars/imalimin/' + ${project.name} + '?style=flat-square&labelColor=%23c82623&color=%23f0f0f0'"/>
+                    <img th:src="'https://img.shields.io/github/forks/imalimin/' + ${project.name} + '?style=flat-square&labelColor=%23c82623&color=%23f0f0f0'"/>
+                    <img th:src="'https://img.shields.io/github/license/imalimin/' + ${project.name} + '?style=flat-square&labelColor=%23c82623&color=%23f0f0f0'"/>
+                </div>
+            </td>
+            <td>
+                <span class="title-1" th:text="${project.label}"></span>
+                <br>
+                <span class="content" th:text="${project.info}"></span>
+            </td>
+        </tr>
+    </table>
+
+    <h2><span class="block-accent">06.</span><span class="title"><u>获奖情况</u></span></h2>
     <table>
         <tr th:each="honor : ${honors}">
             <td class="title-1-120" valign="top" th:text="${honor.time}"></td>

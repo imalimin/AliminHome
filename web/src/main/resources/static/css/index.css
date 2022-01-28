@@ -35,11 +35,19 @@ body {
     /*mso-hansi-font-family: 'Adobe Hebrew';*/
 }
 
+.title-1-140 {
+    min-width: 140px;
+}
+
 .title-1-160 {
     min-width: 160px;
     /*font-family: '思源宋体 Medium', serif;*/
     /*mso-ascii-font-family: 'Adobe Hebrew';*/
     /*mso-hansi-font-family: 'Adobe Hebrew';*/
+}
+
+.title-1-180 {
+    min-width: 180px;
 }
 
 .content {
